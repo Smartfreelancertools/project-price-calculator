@@ -6,59 +6,109 @@
 
 <title>Freelance Project Quote Calculator</title>
 
+<meta name="description" content="Calculate a fair freelance project price based on your hours, expenses, revisions, fees and desired profit.">
+
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
     margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 22px 20px;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #d1d5db;
 }
 
 .container {
-    max-width: 550px;
-    margin: 30px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 0 18px;
 }
 
-h1 {
+.hero {
     text-align: center;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    font-size: 34px;
     margin-bottom: 10px;
 }
 
-.subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
+.hero p {
+    color: #64748b;
+    font-size: 17px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
 }
 
 label {
     display: block;
-    margin-top: 18px;
     font-weight: bold;
+    margin-bottom: 7px;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    margin-top: 7px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 13px;
+    border: 1px solid #d7dce5;
+    border-radius: 9px;
     font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.full {
+    grid-column: 1 / -1;
 }
 
 button {
     width: 100%;
-    padding: 14px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 8px;
+    border: 0;
+    padding: 15px;
+    margin-top: 22px;
+    border-radius: 9px;
     background: #2563eb;
     color: white;
     font-size: 17px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -66,109 +116,294 @@ button:hover {
     background: #1d4ed8;
 }
 
-#result {
-    margin-top: 25px;
-    padding: 20px;
-    background: #eef4ff;
-    border-radius: 10px;
-    display: none;
+.secondary {
+    background: #111827;
 }
 
-.price {
-    font-size: 28px;
-    font-weight: bold;
+.result {
+    display: none;
+    margin-top: 25px;
+    background: #eef4ff;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.final-price {
     text-align: center;
-    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
+    gap: 20px;
+    padding: 11px 0;
+    border-bottom: 1px solid #d9e1ef;
+}
+
+.row:last-child {
+    border-bottom: 0;
+}
+
+.info {
+    margin-top: 35px;
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+}
+
+.info h2 {
+    margin-top: 0;
+}
+
+.info p,
+.info li {
+    color: #526174;
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #718096;
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 20px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<header>
+    <div class="header-inner">
+        <div class="logo">Freelance Tools</div>
+        <p>Simple tools for smarter freelance pricing</p>
+    </div>
+</header>
+
 <div class="container">
 
-<h1>Freelance Project Quote Calculator</h1>
+<section class="hero">
+    <h1>Freelance Project Quote Calculator</h1>
+    <p>
+        Calculate a professional project price based on your time,
+        expenses, revisions and desired profit.
+    </p>
+</section>
 
-<p class="subtitle">
-Calculate a fair price for your freelance project.
-</p>
+<div class="card">
 
-<label>Estimated Project Hours</label>
-<input type="number" id="hours" placeholder="Example: 20">
+<div class="grid">
 
-<label>Your Hourly Rate ($)</label>
+<div>
+<label>Hourly Rate ($)</label>
 <input type="number" id="rate" placeholder="Example: 25">
+</div>
 
+<div>
+<label>Main Project Hours</label>
+<input type="number" id="hours" placeholder="Example: 20">
+</div>
+
+<div>
+<label>Revision Hours</label>
+<input type="number" id="revision" placeholder="Example: 3">
+</div>
+
+<div>
+<label>Meeting / Communication Hours</label>
+<input type="number" id="meeting" placeholder="Example: 2">
+</div>
+
+<div>
 <label>Project Expenses ($)</label>
 <input type="number" id="expenses" placeholder="Example: 20">
+</div>
 
-<label>Profit Margin (%)</label>
+<div>
+<label>Payment / Platform Fee (%)</label>
+<input type="number" id="fee" placeholder="Example: 5">
+</div>
+
+<div class="full">
+<label>Desired Profit Margin (%)</label>
 <input type="number" id="profit" placeholder="Example: 20">
+</div>
+
+</div>
 
 <button onclick="calculatePrice()">Calculate My Quote</button>
 
-<div id="result">
+<div class="result" id="result">
 
-<div class="price" id="finalPrice"></div>
+<div class="final-price" id="finalPrice"></div>
 
 <div class="row">
-<span>Base project cost</span>
-<span id="baseCost"></span>
+<span>Total Working Hours</span>
+<strong id="totalHours"></strong>
 </div>
 
 <div class="row">
-<span>Expenses</span>
-<span id="expenseCost"></span>
+<span>Labor Cost</span>
+<strong id="labor"></strong>
+</div>
+
+<div class="row">
+<span>Project Expenses</span>
+<strong id="expenseResult"></strong>
+</div>
+
+<div class="row">
+<span>Payment / Platform Fee</span>
+<strong id="feeResult"></strong>
 </div>
 
 <div class="row">
 <span>Profit</span>
-<span id="profitCost"></span>
+<strong id="profitResult"></strong>
 </div>
+
+<button class="secondary" onclick="copyQuote()">
+Copy Quote
+</button>
+
+<button class="secondary" onclick="window.print()">
+Print / Save as PDF
+</button>
 
 </div>
 
 </div>
+
+<section class="info">
+
+<h2>How to Price a Freelance Project</h2>
+
+<p>
+A freelance project price should account for more than just the
+hours spent creating the work. Revisions, meetings, expenses,
+payment fees and your desired profit can all affect the final quote.
+</p>
+
+<h2>Why Use This Calculator?</h2>
+
+<ul>
+<li>Estimate your real project workload.</li>
+<li>Include revision and communication time.</li>
+<li>Account for project expenses.</li>
+<li>Consider payment platform fees.</li>
+<li>Build your desired profit into the quote.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<p>
+<strong>Should I charge by the hour or by the project?</strong><br>
+Both methods can work. A project quote can make your pricing easier
+for clients to understand while still being based on your estimated
+working time.
+</p>
+
+<p>
+<strong>Should revisions be included in my price?</strong><br>
+Yes. If revisions require your time, including them in the estimate
+can help prevent underpricing.
+</p>
+
+<p>
+<strong>Can I use this calculator for different freelance jobs?</strong><br>
+Yes. It can be used for design, writing, development, video editing,
+marketing and many other freelance services.
+</p>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 Freelance Tools. All rights reserved.
+</footer>
 
 <script>
 
 function calculatePrice() {
 
-    let hours = Number(document.getElementById("hours").value);
-    let rate = Number(document.getElementById("rate").value);
-    let expenses = Number(document.getElementById("expenses").value);
-    let profit = Number(document.getElementById("profit").value);
+    const rate = Number(document.getElementById("rate").value) || 0;
+    const hours = Number(document.getElementById("hours").value) || 0;
+    const revision = Number(document.getElementById("revision").value) || 0;
+    const meeting = Number(document.getElementById("meeting").value) || 0;
+    const expenses = Number(document.getElementById("expenses").value) || 0;
+    const feePercent = Number(document.getElementById("fee").value) || 0;
+    const profitPercent = Number(document.getElementById("profit").value) || 0;
 
-    if (hours <= 0 || rate <= 0) {
-        alert("Please enter your project hours and hourly rate.");
+    if (rate <= 0 || hours <= 0) {
+        alert("Please enter your hourly rate and project hours.");
         return;
     }
 
-    let base = hours * rate;
-    let subtotal = base + expenses;
-    let profitAmount = subtotal * (profit / 100);
-    let total = subtotal + profitAmount;
+    const totalHours = hours + revision + meeting;
 
-    document.getElementById("baseCost").innerHTML =
-        "$" + base.toFixed(2);
+    const labor = totalHours * rate;
 
-    document.getElementById("expenseCost").innerHTML =
+    const subtotal = labor + expenses;
+
+    const profit = subtotal * (profitPercent / 100);
+
+    const beforeFee = subtotal + profit;
+
+    const fee = beforeFee * (feePercent / 100);
+
+    const total = beforeFee + fee;
+
+    document.getElementById("totalHours").innerText =
+        totalHours.toFixed(1) + " hours";
+
+    document.getElementById("labor").innerText =
+        "$" + labor.toFixed(2);
+
+    document.getElementById("expenseResult").innerText =
         "$" + expenses.toFixed(2);
 
-    document.getElementById("profitCost").innerHTML =
-        "$" + profitAmount.toFixed(2);
+    document.getElementById("feeResult").innerText =
+        "$" + fee.toFixed(2);
 
-    document.getElementById("finalPrice").innerHTML =
+    document.getElementById("profitResult").innerText =
+        "$" + profit.toFixed(2);
+
+    document.getElementById("finalPrice").innerText =
         "Recommended Quote: $" + total.toFixed(2);
 
     document.getElementById("result").style.display = "block";
+}
+
+function copyQuote() {
+
+    const text =
+        document.getElementById("finalPrice").innerText;
+
+    navigator.clipboard.writeText(text);
+
+    alert("Quote copied!");
 }
 
 </script>
