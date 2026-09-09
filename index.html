@@ -4,69 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Project Price Calculator</title>
+<title>Freelance Project Quote Calculator</title>
 
 <style>
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  margin: 0;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-  max-width: 500px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    max-width: 550px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-p {
-  text-align: center;
-  color: #666;
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
 }
 
 label {
-  display: block;
-  margin-top: 20px;
-  font-weight: bold;
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
 }
 
 input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 25px;
-  border: none;
-  border-radius: 8px;
-  background: #2563eb;
-  color: white;
-  font-size: 17px;
-  cursor: pointer;
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
 }
 
 #result {
-  margin-top: 25px;
-  padding: 20px;
-  background: #eef4ff;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
+    margin-top: 25px;
+    padding: 20px;
+    background: #eef4ff;
+    border-radius: 10px;
+    display: none;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
 }
 </style>
 </head>
@@ -74,33 +93,84 @@ button {
 <body>
 
 <div class="container">
-  <h1>Project Price Calculator</h1>
 
-  <p>Calculate your freelance project price easily.</p>
+<h1>Freelance Project Quote Calculator</h1>
 
-  <label>Hours Needed</label>
-  <input type="number" id="hours" placeholder="Example: 10">
+<p class="subtitle">
+Calculate a fair price for your freelance project.
+</p>
 
-  <label>Your Hourly Rate ($)</label>
-  <input type="number" id="rate" placeholder="Example: 20">
+<label>Estimated Project Hours</label>
+<input type="number" id="hours" placeholder="Example: 20">
 
-  <button onclick="calculate()">Calculate Price</button>
+<label>Your Hourly Rate ($)</label>
+<input type="number" id="rate" placeholder="Example: 25">
 
-  <div id="result">
-    Enter details above
-  </div>
+<label>Project Expenses ($)</label>
+<input type="number" id="expenses" placeholder="Example: 20">
+
+<label>Profit Margin (%)</label>
+<input type="number" id="profit" placeholder="Example: 20">
+
+<button onclick="calculatePrice()">Calculate My Quote</button>
+
+<div id="result">
+
+<div class="price" id="finalPrice"></div>
+
+<div class="row">
+<span>Base project cost</span>
+<span id="baseCost"></span>
+</div>
+
+<div class="row">
+<span>Expenses</span>
+<span id="expenseCost"></span>
+</div>
+
+<div class="row">
+<span>Profit</span>
+<span id="profitCost"></span>
+</div>
+
+</div>
+
 </div>
 
 <script>
-function calculate() {
-  let hours = document.getElementById("hours").value;
-  let rate = document.getElementById("rate").value;
 
-  let total = hours * rate;
+function calculatePrice() {
 
-  document.getElementById("result").innerHTML =
-  "Recommended Project Price: $" + total;
+    let hours = Number(document.getElementById("hours").value);
+    let rate = Number(document.getElementById("rate").value);
+    let expenses = Number(document.getElementById("expenses").value);
+    let profit = Number(document.getElementById("profit").value);
+
+    if (hours <= 0 || rate <= 0) {
+        alert("Please enter your project hours and hourly rate.");
+        return;
+    }
+
+    let base = hours * rate;
+    let subtotal = base + expenses;
+    let profitAmount = subtotal * (profit / 100);
+    let total = subtotal + profitAmount;
+
+    document.getElementById("baseCost").innerHTML =
+        "$" + base.toFixed(2);
+
+    document.getElementById("expenseCost").innerHTML =
+        "$" + expenses.toFixed(2);
+
+    document.getElementById("profitCost").innerHTML =
+        "$" + profitAmount.toFixed(2);
+
+    document.getElementById("finalPrice").innerHTML =
+        "Recommended Quote: $" + total.toFixed(2);
+
+    document.getElementById("result").style.display = "block";
 }
+
 </script>
 
 </body>
