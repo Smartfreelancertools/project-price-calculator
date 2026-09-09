@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Freelance Project Quote Calculator</title>
+<title>Freelance Project Quote Calculator | Free Pricing Tool</title>
 
-<meta name="description" content="Calculate a fair freelance project price based on your hours, expenses, revisions, fees and desired profit.">
+<meta name="description" content="Free freelance project quote calculator. Calculate a professional project price using your hourly rate, working hours, revisions, meetings, expenses, fees and desired profit margin.">
+
+<meta name="robots" content="index, follow">
 
 <style>
 * {
@@ -61,6 +63,7 @@ header p {
 .hero p {
     color: #64748b;
     font-size: 17px;
+    line-height: 1.6;
 }
 
 .card {
@@ -120,6 +123,10 @@ button:hover {
     background: #111827;
 }
 
+.secondary:hover {
+    background: #030712;
+}
+
 .result {
     display: none;
     margin-top: 25px;
@@ -156,12 +163,21 @@ button:hover {
 
 .info h2 {
     margin-top: 0;
+    margin-top: 28px;
+}
+
+.info h2:first-child {
+    margin-top: 0;
 }
 
 .info p,
 .info li {
     color: #526174;
     line-height: 1.7;
+}
+
+.info ul {
+    padding-left: 22px;
 }
 
 footer {
@@ -188,6 +204,14 @@ footer {
     .card {
         padding: 20px;
     }
+
+    .final-price {
+        font-size: 25px;
+    }
+
+    .row {
+        font-size: 15px;
+    }
 }
 </style>
 </head>
@@ -204,11 +228,15 @@ footer {
 <div class="container">
 
 <section class="hero">
+
     <h1>Freelance Project Quote Calculator</h1>
+
     <p>
-        Calculate a professional project price based on your time,
-        expenses, revisions and desired profit.
+        Calculate a professional freelance project price based on your
+        hourly rate, working hours, revisions, meetings, expenses,
+        payment fees and desired profit margin.
     </p>
+
 </section>
 
 <div class="card">
@@ -216,38 +244,38 @@ footer {
 <div class="grid">
 
 <div>
-<label>Hourly Rate ($)</label>
-<input type="number" id="rate" placeholder="Example: 25">
+<label for="rate">Hourly Rate ($)</label>
+<input type="number" id="rate" min="0" step="0.01" placeholder="Example: 25">
 </div>
 
 <div>
-<label>Main Project Hours</label>
-<input type="number" id="hours" placeholder="Example: 20">
+<label for="hours">Main Project Hours</label>
+<input type="number" id="hours" min="0" step="0.1" placeholder="Example: 20">
 </div>
 
 <div>
-<label>Revision Hours</label>
-<input type="number" id="revision" placeholder="Example: 3">
+<label for="revision">Revision Hours</label>
+<input type="number" id="revision" min="0" step="0.1" placeholder="Example: 3">
 </div>
 
 <div>
-<label>Meeting / Communication Hours</label>
-<input type="number" id="meeting" placeholder="Example: 2">
+<label for="meeting">Meeting / Communication Hours</label>
+<input type="number" id="meeting" min="0" step="0.1" placeholder="Example: 2">
 </div>
 
 <div>
-<label>Project Expenses ($)</label>
-<input type="number" id="expenses" placeholder="Example: 20">
+<label for="expenses">Project Expenses ($)</label>
+<input type="number" id="expenses" min="0" step="0.01" placeholder="Example: 20">
 </div>
 
 <div>
-<label>Payment / Platform Fee (%)</label>
-<input type="number" id="fee" placeholder="Example: 5">
+<label for="fee">Payment / Platform Fee (%)</label>
+<input type="number" id="fee" min="0" max="100" step="0.1" placeholder="Example: 5">
 </div>
 
 <div class="full">
-<label>Desired Profit Margin (%)</label>
-<input type="number" id="profit" placeholder="Example: 20">
+<label for="profit">Desired Profit Margin (%)</label>
+<input type="number" id="profit" min="0" max="99.9" step="0.1" placeholder="Example: 20">
 </div>
 
 </div>
@@ -300,40 +328,94 @@ Print / Save as PDF
 <h2>How to Price a Freelance Project</h2>
 
 <p>
-A freelance project price should account for more than just the
-hours spent creating the work. Revisions, meetings, expenses,
-payment fees and your desired profit can all affect the final quote.
+Pricing a freelance project is about more than multiplying your hourly
+rate by the number of hours you expect to work. A professional project
+quote should also consider revisions, client meetings, communication,
+project expenses, payment processing fees and the profit you want to
+earn.
 </p>
 
-<h2>Why Use This Calculator?</h2>
+<p>
+This freelance project quote calculator combines these costs to help
+you create a more realistic fixed-price quote for your clients.
+</p>
+
+<h2>How This Freelance Pricing Calculator Works</h2>
+
+<p>
+First, enter your hourly rate and estimated main project hours.
+Then add the time you expect to spend on revisions and meetings or
+client communication. Include any additional project expenses,
+payment or platform fees, and your desired profit margin.
+</p>
+
+<p>
+The calculator combines your working time and expenses and then
+calculates the amount you should quote for the project.
+</p>
+
+<h2>Why Include Revision and Meeting Time?</h2>
+
+<p>
+Freelancers often underestimate the time spent on revisions,
+client calls, messages and project communication. If these hours are
+not included in your estimate, your effective hourly earnings can be
+much lower than expected.
+</p>
 
 <ul>
-<li>Estimate your real project workload.</li>
-<li>Include revision and communication time.</li>
-<li>Account for project expenses.</li>
-<li>Consider payment platform fees.</li>
-<li>Build your desired profit into the quote.</li>
+<li>Include realistic project working hours.</li>
+<li>Estimate revision time before sending your quote.</li>
+<li>Include meetings and client communication.</li>
+<li>Add software, materials or other project expenses.</li>
+<li>Account for payment or freelance platform fees.</li>
+<li>Include a profit margin that matches your business goals.</li>
 </ul>
+
+<h2>Hourly Rate vs. Project Pricing</h2>
+
+<p>
+Hourly pricing can be useful when the amount of work is uncertain.
+Project-based pricing can be easier for clients when the scope and
+deliverables are clearly defined. Even when you charge a fixed project
+price, calculating your expected hours can help you avoid
+underpricing your work.
+</p>
 
 <h2>Frequently Asked Questions</h2>
 
 <p>
-<strong>Should I charge by the hour or by the project?</strong><br>
-Both methods can work. A project quote can make your pricing easier
-for clients to understand while still being based on your estimated
-working time.
+<strong>How much should I charge for a freelance project?</strong><br>
+Your project price depends on your hourly rate, total working time,
+expenses, payment fees and desired profit. Use the calculator above
+to estimate a quote based on these factors.
 </p>
 
 <p>
-<strong>Should revisions be included in my price?</strong><br>
-Yes. If revisions require your time, including them in the estimate
-can help prevent underpricing.
+<strong>Should revisions be included in my freelance quote?</strong><br>
+Yes. If revisions require your time, estimate those hours before
+setting your project price. This can help reduce the risk of
+undercharging.
 </p>
 
 <p>
-<strong>Can I use this calculator for different freelance jobs?</strong><br>
-Yes. It can be used for design, writing, development, video editing,
-marketing and many other freelance services.
+<strong>Should meetings and communication time be included?</strong><br>
+Yes. Client meetings, calls, messages and project communication can
+take significant time, so including them can make your project
+estimate more realistic.
+</p>
+
+<p>
+<strong>Can I use this calculator for different freelance services?</strong><br>
+Yes. The calculator can be used for web development, graphic design,
+writing, video editing, marketing, SEO, consulting and many other
+freelance services.
+</p>
+
+<p>
+<strong>Can I use this calculator for international clients?</strong><br>
+Yes. The calculator uses your entered hourly rate and expenses, so it
+can be used when pricing projects for clients in different countries.
 </p>
 
 </section>
@@ -361,19 +443,42 @@ function calculatePrice() {
         return;
     }
 
+    if (feePercent < 0 || feePercent >= 100) {
+        alert("Please enter a payment/platform fee between 0% and 99.9%.");
+        return;
+    }
+
+    if (profitPercent < 0 || profitPercent >= 100) {
+        alert("Please enter a profit margin between 0% and 99.9%.");
+        return;
+    }
+
     const totalHours = hours + revision + meeting;
 
     const labor = totalHours * rate;
 
     const subtotal = labor + expenses;
 
-    const profit = subtotal * (profitPercent / 100);
+    /*
+       Profit margin means profit as a percentage of the final price.
+       Example:
+       Cost = $100
+       Desired margin = 20%
+       Final price = $125
+       Profit = $25
+    */
 
-    const beforeFee = subtotal + profit;
+    const priceBeforeFee = subtotal / (1 - (profitPercent / 100));
 
-    const fee = beforeFee * (feePercent / 100);
+    const profit = priceBeforeFee - subtotal;
 
-    const total = beforeFee + fee;
+    /*
+       Payment/platform fee is added on top of the quote.
+    */
+
+    const fee = priceBeforeFee * (feePercent / 100);
+
+    const total = priceBeforeFee + fee;
 
     document.getElementById("totalHours").innerText =
         totalHours.toFixed(1) + " hours";
@@ -401,9 +506,13 @@ function copyQuote() {
     const text =
         document.getElementById("finalPrice").innerText;
 
-    navigator.clipboard.writeText(text);
-
-    alert("Quote copied!");
+    navigator.clipboard.writeText(text)
+        .then(function() {
+            alert("Quote copied!");
+        })
+        .catch(function() {
+            alert("Unable to copy the quote.");
+        });
 }
 
 </script>
