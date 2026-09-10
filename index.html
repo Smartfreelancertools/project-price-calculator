@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Project Pricing Calculator | Free Quote & Rate Tools</title>
+<meta name="description" content="Free freelance pricing toolkit. Calculate project quotes, hourly rates, platform fees, profit margins, and estimated freelance income in minutes.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfreelancertools.github.io/project-price-calculator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Freelance Project Pricing Calculator | Free Quote & Rate Tools">
+<meta property="og:description" content="Free tools for freelancers to price projects, protect profit, calculate rates, and plan freelance income.">
+<meta property="og:url" content="https://smartfreelancertools.github.io/project-price-calculator/">
+<meta property="og:site_name" content="Freelance Tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Freelance Project Pricing Calculator">
+<meta name="twitter:description" content="Calculate freelance project quotes, hourly rates, fees, profit margins, and estimated income.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Freelance Project Pricing Calculator",
+  "url":"https://smartfreelancertools.github.io/project-price-calculator/",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Any",
+  "browserRequirements":"Requires JavaScript",
+  "description":"Free freelance pricing toolkit for calculating project quotes, hourly rates, platform fees, profit margins, and freelance income.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#172033;--muted:#5f6b7a;--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#111827;--line:#d9e1ef;--soft:#eef4ff;--success:#166534;--danger:#b91c1c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:var(--dark);color:#fff;padding:20px}
+.header-inner{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:22px;font-weight:700}.tagline{margin:0;color:#d1d5db;font-size:14px}
+nav{display:flex;gap:8px;flex-wrap:wrap}nav a{color:#fff;text-decoration:none;padding:8px 11px;border-radius:8px;font-size:14px}nav a:hover{background:#1f2937}
+.container{max-width:1080px;margin:0 auto;padding:34px 18px}
+.hero{text-align:center;margin-bottom:28px}.badge{display:inline-block;background:#e8efff;color:#1d4ed8;padding:6px 11px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:10px}
+h1{font-size:38px;line-height:1.2;margin:8px 0 12px}.hero p{max-width:800px;margin:0 auto;color:var(--muted);font-size:17px}
+.card,.info,.tool-card{background:var(--surface);border-radius:16px;padding:28px;box-shadow:0 6px 25px rgba(0,0,0,.07)}
+.card{margin-bottom:28px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-weight:700;margin-bottom:7px}input{width:100%;padding:13px;border:1px solid #d7dce5;border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+input:focus{outline:3px solid rgba(37,99,235,.12);border-color:var(--primary)}
+small,.hint{display:block;color:var(--muted);font-size:13px;margin-top:5px}.full{grid-column:1/-1}
+button{width:100%;border:0;padding:15px;margin-top:22px;border-radius:9px;background:var(--primary);color:#fff;font-size:17px;font-weight:700;cursor:pointer}
+button:hover{background:var(--primary-dark)}.secondary{background:var(--dark)}.secondary:hover{background:#030712}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.actions button{margin-top:12px}
+.result{display:none;margin-top:25px;background:var(--soft);padding:24px;border-radius:14px}.result.show{display:block}
+.final-price{text-align:center;font-size:31px;font-weight:700;margin-bottom:18px}
+.row{display:flex;justify-content:space-between;gap:20px;padding:11px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}
+.note{background:#f8fafc;border-left:4px solid var(--primary);padding:12px 14px;margin-top:18px;color:#475569}
+.error{color:var(--danger);font-weight:700;margin-top:10px;display:none}.success{color:var(--success);font-weight:700;margin-top:10px;display:none}
+.section-title{text-align:center;margin:38px 0 18px}.section-title h2{margin-bottom:5px}.section-title p{color:var(--muted);margin:0}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tool-card h3{margin-top:0}.tool-card .result{margin-top:18px}
+.info{margin-top:28px}.info h2{margin-top:30px}.info h2:first-child{margin-top:0}.info h3{margin-top:24px}.info p,.info li{color:#526174}.info ul{padding-left:22px}
+.faq{border-top:1px solid var(--line);padding:15px 0}.faq strong{display:block;color:var(--ink);margin-bottom:5px}
+.cta{margin-top:28px;background:var(--dark);color:#fff;padding:28px;border-radius:16px;text-align:center}.cta p{color:#d1d5db}
+footer{text-align:center;padding:30px 15px;color:#718096;font-size:14px}
+@media(max-width:700px){.header-inner{flex-direction:column;text-align:center}nav{justify-content:center}.grid,.tool-grid,.actions{grid-template-columns:1fr}h1{font-size:29px}.card,.info,.tool-card{padding:20px}.final-price{font-size:26px}.row{font-size:15px}}
+@media print{header,nav,.hero,.section-title,.tool-grid,.cta,footer,.no-print{display:none!important}body{background:#fff}.container{max-width:none;padding:0}.card,.result{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div><div class="logo">Freelance Tools</div><p class="tagline">Simple tools for smarter freelance pricing</p></div>
+<nav aria-label="Main navigation"><a href="#project-pricing">Project Quote</a><a href="#rate-calculator">Hourly Rate</a><a href="#income-calculator">Income</a><a href="#guides">Pricing Guide</a></nav>
+</div>
+</header>
+
+<main class="container">
+<section class="hero">
+<span class="badge">Free Freelance Pricing Toolkit</span>
+<h1>Freelance Project Pricing Calculator</h1>
+<p>Calculate a professional freelance project price using your hourly rate, working time, revisions, meetings, expenses, payment fees, and desired profit margin. Use the free tools below to price projects and plan your freelance income.</p>
+</section>
+
+<section id="project-pricing" class="card" aria-labelledby="project-title">
+<h2 id="project-title">Project Quote Calculator</h2>
+<p class="hint">Enter your expected work and costs. The calculator treats the payment/platform fee as a percentage deducted from the client payment, so your quote is high enough to cover that fee.</p>
+<div class="grid">
+<div><label for="rate">Hourly Rate ($)</label><input type="number" id="rate" min="0" step="0.01" placeholder="Example: 50" inputmode="decimal"></div>
+<div><label for="hours">Main Project Hours</label><input type="number" id="hours" min="0" step="0.1" placeholder="Example: 20" inputmode="decimal"></div>
+<div><label for="revision">Revision Hours</label><input type="number" id="revision" min="0" step="0.1" value="0" inputmode="decimal"></div>
+<div><label for="meeting">Meeting / Communication Hours</label><input type="number" id="meeting" min="0" step="0.1" value="0" inputmode="decimal"></div>
+<div><label for="expenses">Project Expenses ($)</label><input type="number" id="expenses" min="0" step="0.01" value="0" inputmode="decimal"></div>
+<div><label for="fee">Payment / Platform Fee (%)</label><input type="number" id="fee" min="0" max="99.9" step="0.1" value="0" inputmode="decimal"></div>
+<div class="full"><label for="profit">Desired Profit Margin (%)</label><input type="number" id="profit" min="0" max="99.9" step="0.1" value="20" inputmode="decimal"><small>Example: 20 means you want profit to equal 20% of the final client payment after covering the platform fee and project costs.</small></div>
+</div>
+<button onclick="calculatePrice()">Calculate My Quote</button>
+<div id="quoteError" class="error" role="alert"></div>
+<div class="result" id="result" aria-live="polite">
+<div class="final-price" id="finalPrice"></div>
+<div class="row"><span>Total Working Hours</span><strong id="totalHours"></strong></div>
+<div class="row"><span>Labor Cost</span><strong id="labor"></strong></div>
+<div class="row"><span>Project Expenses</span><strong id="expenseResult"></strong></div>
+<div class="row"><span>Payment / Platform Fee</span><strong id="feeResult"></strong></div>
+<div class="row"><span>Profit</span><strong id="profitResult"></strong></div>
+<div class="row"><span>Effective Hourly Earnings</span><strong id="effectiveRate"></strong></div>
+<div class="note" id="quoteNote"></div>
+<div class="actions no-print"><button class="secondary" onclick="copyQuote()">Copy Quote</button><button class="secondary" onclick="window.print()">Print / Save as PDF</button></div>
+<div id="copyMessage" class="success" role="status"></div>
+</div>
+</section>
+
+<div class="section-title"><h2>More Free Freelance Pricing Tools</h2><p>Use these calculators to plan your rate and income before accepting work.</p></div>
+<section class="tool-grid">
+<article id="rate-calculator" class="tool-card">
+<h3>Hourly Rate Calculator</h3><p>Find an hourly freelance rate from your target annual income, working weeks, billable hours, and business expenses.</p>
+<label for="targetIncome">Target Annual Income ($)</label><input type="number" id="targetIncome" min="0" step="100" placeholder="Example: 60000">
+<label for="annualExpenses">Annual Business Expenses ($)</label><input type="number" id="annualExpenses" min="0" step="100" value="0">
+<label for="workWeeks">Working Weeks per Year</label><input type="number" id="workWeeks" min="1" max="52" step="1" value="48">
+<label for="billableHours">Billable Hours per Week</label><input type="number" id="billableHours" min="1" step="1" value="25">
+<button onclick="calculateHourlyRate()">Calculate Hourly Rate</button>
+<div id="rateResult" class="result" aria-live="polite"></div>
+</article>
+
+<article id="income-calculator" class="tool-card">
+<h3>Freelance Income Calculator</h3><p>Estimate yearly and monthly gross income from your hourly rate and realistic billable hours.</p>
+<label for="incomeRate">Hourly Rate ($)</label><input type="number" id="incomeRate" min="0" step="0.01" placeholder="Example: 50">
+<label for="incomeHours">Billable Hours per Week</label><input type="number" id="incomeHours" min="0" step="1" value="25">
+<label for="incomeWeeks">Working Weeks per Year</label><input type="number" id="incomeWeeks" min="1" max="52" step="1" value="48">
+<button onclick="calculateIncome()">Calculate Income</button>
+<div id="incomeResult" class="result" aria-live="polite"></div>
+</article>
+</section>
+
+<section id="guides" class="info">
+<h2>How to Price a Freelance Project</h2>
+<p>Pricing a freelance project is about more than multiplying an hourly rate by estimated project hours. A reliable fixed-price quote should account for the time required to complete the work, revisions, meetings and communication, project expenses, payment or platform fees, and the profit you want to keep.</p>
+<p>This freelance project pricing calculator brings those factors together so you can create a more realistic quote before sending it to a client.</p>
+
+<h2>How This Freelance Pricing Calculator Works</h2>
+<p>First, enter your hourly rate and the main project hours. Add realistic revision and meeting time, then include direct project expenses. Finally, enter any payment or freelance platform fee and your desired profit margin.</p>
+<p>The calculator adds your labor and direct expenses, then works backward from the desired final profit margin and payment fee to calculate the client price needed to cover the costs.</p>
+
+<h2>Why Revisions and Meetings Matter</h2>
+<p>Freelancers often estimate only the time spent producing the main deliverable. But client calls, messages, feedback, revisions, testing, handoffs, and project administration can also consume paid working time. Including that time gives you a more realistic effective hourly rate.</p>
+<ul><li>Estimate the main production or development work.</li><li>Allow realistic time for revisions and feedback.</li><li>Include meetings, calls, messages, and communication.</li><li>Add software, stock assets, hosting, materials, or other direct expenses.</li><li>Account for payment processor or freelance marketplace fees.</li><li>Set a profit margin that supports your business goals.</li></ul>
+
+<h2>Hourly Rate vs. Project-Based Pricing</h2>
+<p>Hourly pricing can be useful when the scope is uncertain or requirements may change. Project-based pricing can be easier for clients when the deliverables and scope are clear. Even when you sell a fixed-price project, estimating the hours internally helps you check whether the quote is financially worthwhile.</p>
+
+<h2>How Much Should a Freelancer Charge?</h2>
+<p>There is no single hourly rate that fits every freelancer. Your rate should reflect your skills, experience, specialty, market, business expenses, non-billable time, taxes and financial goals. A rate that looks high compared with a beginner rate may be appropriate for an experienced specialist, while a low rate may become unprofitable if much of your working time is spent on sales, administration, revisions, or unpaid communication.</p>
+
+<h2>How to Avoid Underpricing Freelance Work</h2>
+<p>Before accepting a fixed-price project, estimate the complete workload rather than only the main task. Consider discovery, planning, communication, revisions, testing, delivery and follow-up. Then compare the expected net earnings with the hours you will actually spend. This simple check can reveal when a project price is too low.</p>
+
+<h2>Freelance Pricing for Web Development, Design, Writing, SEO and Marketing</h2>
+<p>The same pricing principles can be used for many freelance services, including web development, graphic design, UI/UX design, writing, editing, video production, SEO, digital marketing, consulting, virtual assistance and other professional services. The inputs change from project to project, but time, direct costs, platform fees and profit still matter.</p>
+
+<h2>Using the Calculator for International Clients</h2>
+<p>You can use the calculator for clients in the United States, United Kingdom, Canada, Australia, Europe, and other markets by entering your own pricing currency or using a converted hourly rate. If a client pays through a platform with a transaction fee, include that fee so the quote reflects the amount you need to receive.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq"><strong>How much should I charge for a freelance project?</strong><span>Your project price should cover the complete expected workload and direct costs while leaving enough profit for your business. Use the calculator to test different hourly rates, hours, expenses, fees and profit margins.</span></div>
+<div class="faq"><strong>Should revisions be included in a freelance quote?</strong><span>Yes, when revisions require your time. Estimate realistic revision hours or clearly define the number of included revisions in your proposal.</span></div>
+<div class="faq"><strong>Should meetings and communication time be included?</strong><span>Yes. Calls, meetings, messages and project coordination take time and should be considered when estimating the real cost of a fixed-price project.</span></div>
+<div class="faq"><strong>How does the platform fee calculation work?</strong><span>The quote calculator assumes the fee is deducted from the client payment. It therefore increases the recommended quote so the fee does not reduce the intended profit margin.</span></div>
+<div class="faq"><strong>Can I use these tools for different freelance services?</strong><span>Yes. They can be used for development, design, writing, marketing, SEO, consulting, video editing, virtual assistance and many other freelance services.</span></div>
+<div class="faq"><strong>Can I use the calculator for international clients?</strong><span>Yes. Enter the rate and expenses in the currency you use for the quote, or convert the client's currency before calculating.</span></div>
+</section>
+
+<section class="cta"><h2>Price Your Next Freelance Project With Confidence</h2><p>Use the calculator before sending a proposal so your quote accounts for time, costs, fees and profit—not just the main task.</p></section>
+</main>
+<footer>© 2026 Freelance Tools. Free tools for smarter freelance pricing.</footer>
+
+<script>
+function num(id){const value=Number(document.getElementById(id).value);return Number.isFinite(value)?value:0}
+function money(value){return "$"+value.toFixed(2)}
+
+function calculatePrice(){
+const rate=num("rate"),hours=num("hours"),revision=num("revision"),meeting=num("meeting"),expenses=num("expenses"),feePercent=num("fee"),profitPercent=num("profit");
+const error=document.getElementById("quoteError");error.style.display="none";error.textContent="";
+if(rate<=0||hours<=0){error.textContent="Please enter an hourly rate and main project hours greater than 0.";error.style.display="block";return}
+if(revision<0||meeting<0||expenses<0||feePercent<0||profitPercent<0||feePercent>=100||profitPercent>=100||feePercent+profitPercent>=100){error.textContent="Please check your inputs. Payment fee and profit margin must each be below 100%, and their combined percentage must be below 100%.";error.style.display="block";return}
+const totalHours=hours+revision+meeting,labor=totalHours*rate,subtotal=labor+expenses,fee=feePercent/100,margin=profitPercent/100;
+const total=subtotal/(1-fee-margin),platformFee=total*fee,profit=total-platformFee-subtotal,effectiveRate=(total-platformFee-expenses)/totalHours;
+document.getElementById("totalHours").textContent=totalHours.toFixed(1)+" hours";
+document.getElementById("labor").textContent=money(labor);
+document.getElementById("expenseResult").textContent=money(expenses);
+document.getElementById("feeResult").textContent=money(platformFee);
+document.getElementById("profitResult").textContent=money(profit);
+document.getElementById("effectiveRate").textContent=money(effectiveRate)+"/hr";
+document.getElementById("finalPrice").textContent="Recommended Quote: "+money(total);
+document.getElementById("quoteNote").textContent="After the estimated platform fee, this quote leaves "+money(profit)+" in profit. Your target profit margin is "+profitPercent.toFixed(1)+"% of the final client payment.";
+document.getElementById("copyMessage").style.display="none";
+document.getElementById("result").classList.add("show");
+document.getElementById("result").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function copyQuote(){
+const text=[document.getElementById("finalPrice").innerText,"Total Working Hours: "+document.getElementById("totalHours").innerText,"Labor Cost: "+document.getElementById("labor").innerText,"Project Expenses: "+document.getElementById("expenseResult").innerText,"Payment / Platform Fee: "+document.getElementById("feeResult").innerText,"Profit: "+document.getElementById("profitResult").innerText].join("\n");
+const message=document.getElementById("copyMessage");
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(()=>{message.textContent="Quote copied to your clipboard.";message.style.display="block"}).catch(()=>fallbackCopy(text))}else fallbackCopy(text)
+}
+function fallbackCopy(text){const area=document.createElement("textarea");area.value=text;document.body.appendChild(area);area.select();try{document.execCommand("copy");const m=document.getElementById("copyMessage");m.textContent="Quote copied to your clipboard.";m.style.display="block"}catch(e){alert("Please copy the quote manually.")}area.remove()}
+
+function calculateHourlyRate(){
+const target=num("targetIncome"),expenses=num("annualExpenses"),weeks=num("workWeeks"),hours=num("billableHours"),box=document.getElementById("rateResult");
+if(target<=0||weeks<=0||hours<=0){box.classList.add("show");box.innerHTML="<strong>Please enter your target income, working weeks, and billable hours.</strong>";return}
+const required=target+expenses,billableHours=weeks*hours,rate=required/billableHours;
+box.classList.add("show");box.innerHTML="<div class='final-price'>Suggested Minimum Rate: "+money(rate)+"/hr</div><div class='row'><span>Income Goal</span><strong>"+money(target)+"</strong></div><div class='row'><span>Business Expenses</span><strong>"+money(expenses)+"</strong></div><div class='row'><span>Annual Billable Hours</span><strong>"+billableHours.toFixed(0)+"</strong></div><div class='note'>This is a planning estimate. Taxes, unpaid time, savings, benefits, and other business costs may require a higher rate.</div>";
+}
+
+function calculateIncome(){
+const rate=num("incomeRate"),hours=num("incomeHours"),weeks=num("incomeWeeks"),box=document.getElementById("incomeResult");
+if(rate<=0||hours<=0||weeks<=0){box.classList.add("show");box.innerHTML="<strong>Please enter an hourly rate, billable hours, and working weeks.</strong>";return}
+const annual=rate*hours*weeks,monthly=annual/12,weekly=rate*hours;
+box.classList.add("show");box.innerHTML="<div class='final-price'>Estimated Annual Income: "+money(annual)+"</div><div class='row'><span>Weekly Gross Income</span><strong>"+money(weekly)+"</strong></div><div class='row'><span>Average Monthly Gross Income</span><strong>"+money(monthly)+"</strong></div><div class='row'><span>Annual Billable Hours</span><strong>"+(hours*weeks).toFixed(0)+"</strong></div><div class='note'>This is gross revenue before taxes, business expenses, unpaid time, refunds, and platform fees.</div>";
+}
+</script>
+</body>
+</html>
